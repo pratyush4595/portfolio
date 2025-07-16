@@ -1,22 +1,28 @@
-import { useEffect } from 'react';
-import './Navbar.css'; // Optional for custom styling
+import { useEffect, useState } from 'react';
+import './Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const [theme, setTheme] = useState('dark');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Define Navlink classes
   const activeNavlink = 'nav-link active';
   const inactiveNavlink = 'nav-link';
-  
+
   // Set default theme to dark on initial load
   useEffect(() => {
-    document.documentElement.setAttribute('data-bs-theme', 'dark');
-  }, []);
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  }, [theme]);
 
   // Theme toggler
-  const handleThemeToggle = () => {
-    const html = document.documentElement;
-    const currentTheme = html.getAttribute('data-bs-theme');
-    html.setAttribute('data-bs-theme', currentTheme === 'dark' ? 'light' : 'dark');
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  // Mobile button toggler
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
   };
 
   return (
@@ -27,47 +33,57 @@ const Navbar = () => {
           <span className="brand-highlight">P</span>ratyush
         </a>
 
+        {/* Mobile Custom Theme Switcher */}
+        <div className="d-lg-none ms-auto me-4 theme-toggle ms-4" onClick={toggleTheme} title="Toggle Theme">
+          <div className={`switch ${theme === 'light' ? 'active' : ''}`}>
+            <div className="thumb">
+              <i className={`bi ${theme === 'light' ? 'bi-sun-fill' : 'bi-moon-stars-fill'}`}></i>
+            </div>
+          </div>
+        </div>
+
         {/* Mobile Toggle Button */}
         <button
-          className="navbar-toggler"
+          className={`navbar-toggler custom-toggler ${isMenuOpen ? 'open' : ''}`}
           type="button"
+          onClick={toggleMenu}
           data-bs-toggle="collapse"
           data-bs-target="#mainNavbar"
           aria-controls="mainNavbar"
-          aria-expanded="false"
+          aria-expanded={isMenuOpen}
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <i className={`bi ${isMenuOpen ? 'bi-x-lg' : 'bi-list'}`}></i>
         </button>
 
         {/* Navbar Links */}
         <div className="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul className="navbar-nav mb-2 mb-lg-0">
+          <ul className="navbar-nav nav-tabs mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" href="#home">Home</a>
+              <NavLink to='/' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Home</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#about">About</a>
+              <NavLink to='/about' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>About</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#skills">Skills</a>
+              <NavLink to='/skills' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Skills</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#projects">Projects</a>
+              <NavLink to='/projects' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Projects</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#contact">Contact</a>
+              <NavLink to='/contact' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Contact</NavLink>
             </li>
           </ul>
 
-          {/* Theme Toggle Button */}
-          <button
-            onClick={handleThemeToggle}
-            className="btn btn-outline-secondary ms-3"
-            title="Toggle theme"
-          >
-            <i className="bi bi-circle-half"></i>
-          </button>
+          {/* Custom Theme Switcher */}
+          <div className="d-none d-lg-block theme-toggle ms-4" onClick={toggleTheme} title="Toggle Theme">
+            <div className={`switch ${theme === 'light' ? 'active' : ''}`}>
+              <div className="thumb">
+                <i className={`bi ${theme === 'light' ? 'bi-sun-fill' : 'bi-moon-stars-fill'}`}></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
