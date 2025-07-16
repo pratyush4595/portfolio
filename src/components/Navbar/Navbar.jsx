@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Navbar.css';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [theme, setTheme] = useState('dark');
@@ -29,9 +29,9 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm sticky-top">
       <div className="container">
         {/* Text Brand */}
-        <a className="navbar-brand fw-bold fs-4 text-uppercase" href="#">
+        <Link to='/' className="navbar-brand fw-bold fs-4 text-uppercase">
           <span className="brand-highlight">P</span>ratyush
-        </a>
+        </Link>
 
         {/* Mobile Custom Theme Switcher */}
         <div className="d-lg-none ms-auto me-4 theme-toggle ms-4" onClick={toggleTheme} title="Toggle Theme">
