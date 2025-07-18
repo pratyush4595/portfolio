@@ -11,21 +11,21 @@ const Hero = () => {
                 <div className="row align-items-center">
                     {/* Text Content */}
                     <div className="col-lg-6 text-center text-lg-start">
-                        <h1 className="hero-title mb-3">Hi, I'm <span className="highlight">Pratyush Swain</span></h1>
-                        <h4 className="hero-subtitle mb-3">Fullstack Developer | MERN Stack</h4>
-                        <p className="hero-description">
+                        <h1 className="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Hi, I'm <span className="highlight">Pratyush Swain</span></h1>
+                        <h4 className="hero-subtitle mb-3" data-aos="fade-up" data-aos-delay="200">Fullstack Developer | MERN Stack</h4>
+                        <p className="hero-description" data-aos="fade-up" data-aos-delay="300">
                             Passionate about building modern fullstack web applications with beautiful UI, powerful backend,
                             and seamless user experiences.
                         </p>
-                        <div className="hero-buttons mt-4">
+                        <div className="hero-buttons mt-2" data-aos="fade-up" data-aos-delay="400">
                             <a
                                 href={Resume}
                                 download
-                                className="btn btn-primary me-3"
+                                className="btn btn-primary mt-2 me-3"
                             >
                                 📄 View Resume
                             </a>
-                            <Link to='/contact' className="btn btn-outline-secondary">
+                            <Link to='/contact' className="btn btn-outline-secondary mt-2">
                                 📬 Contact Me
                             </Link>
                         </div>
@@ -37,6 +37,7 @@ const Hero = () => {
                             src={HeroIllustration}
                             alt="Developer at work"
                             className="img-fluid hero-image"
+                            data-aos="zoom-in-left"
                         />
                     </div>
                 </div>

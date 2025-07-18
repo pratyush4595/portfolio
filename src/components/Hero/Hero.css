@@ -1,8 +1,7 @@
 .hero {
-    min-height: 100vh;
     background-color: var(--bs-body-bg);
     color: var(--bs-body-color);
-    padding-top: 2rem;
+    padding-top: 4rem;
     padding-bottom: 3rem;
     transition: background-color 0.3s, color 0.3s;
 }
