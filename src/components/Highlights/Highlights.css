@@ -1,0 +1,46 @@
+.highlights {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s;
+}
+
+.scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.highlight-card {
+    flex: 0 0 auto;
+    width: 90%;
+    max-width: 320px;
+    scroll-snap-align: start;
+    border: 1px solid transparent;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.15);
+    border-color: var(--bs-primary);
+}
+
+@media (min-width: 768px) {
+    .highlight-card {
+        width: calc(100% / 3 - 1rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .highlight-card {
+        width: calc(100% / 2 - 1rem);
+    }
+}
