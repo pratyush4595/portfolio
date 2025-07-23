@@ -6,9 +6,9 @@ const AboutPreview = () => {
     return (
         <section className="about-preview py-5">
             <div className="container">
-                <div className="card shadow-lg border-0 rounded-4 p-4 bg-body-tertiary">
+                <div className="card shadow-lg border-0 rounded-4 p-4 bg-body-tertiary" data-aos="fade-up">
                     <div className="row align-items-center">
-                        <div className="col-lg-9" data-aos="fade-up">
+                        <div className="col-lg-9">
                             <h2 className="mb-3 fw-bold">About Me</h2>
                             <p className="lead mb-0">
                                 I'm a passionate <strong>Fullstack Developer</strong> (MERN Stack) who loves building powerful web

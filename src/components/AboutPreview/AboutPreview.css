@@ -3,10 +3,6 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-.about-preview .card {
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
 .about-preview .btn {
     transition: all 0.3s ease;
 }
