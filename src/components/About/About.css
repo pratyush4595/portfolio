@@ -1,0 +1,94 @@
+.about-page {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+/* Frame wrapper */
+.modern-photo-frame {
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: var(--bs-tertiary-bg);
+    border-radius: 1.2rem;
+    border: 1px solid var(--bs-border-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.modern-photo-frame:hover {
+    box-shadow: 0 12px 30px rgba(13, 110, 253, 0.15);
+}
+
+/* Actual image */
+.modern-photo-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.modern-photo-img:hover {
+    transform: scale(1.015);
+}
+
+/* Caption below image */
+.photo-caption h5 {
+    font-size: 1.2rem;
+    color: var(--bs-body-color);
+}
+
+.photo-caption p {
+    font-size: 0.95rem;
+    color: var(--bs-secondary-color);
+}
+
+.education-card {
+    transition: all 0.3s ease;
+    border: none;
+    background-color: transparent;
+}
+
+.education-card h5 {
+    font-weight: 600;
+    color: var(--bs-heading-color);
+}
+
+.education-card ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 0.4em 0.75em;
+}
+
+.skills-list .badge {
+    font-size: 0.9rem;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5rem;
+}
+
+.tools-list .tool-badge {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tools-list .tool-badge:hover {
+    background-color: var(--bs-primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--bs-secondary-color);
+}
