@@ -1,9 +1,9 @@
 .scroll-to-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 45px;
-    height: 45px;
+    bottom: 78px;
+    right: 20px;
+    width: 43px;
+    height: 43px;
     background-color: var(--bs-primary);
     color: #fff;
     border: none;
