@@ -14,7 +14,7 @@ const Footer = () => {
                 </svg>
             </div>
 
-            <footer className="footer pt-5 pb-4 mt-0" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <footer className="footer mt-0" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <div className="container">
                     <div className="row g-4 justify-content-between">
 
@@ -73,6 +73,17 @@ const Footer = () => {
                         &copy; {currentYear} Pratyush Swain. All rights reserved.
                     </div>
                 </div>
+
+                {/* Floating Whatsapp Button */}
+                <a
+                    href="https://wa.me/918018194595"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="whatsapp-btn"
+                    aria-label="WhatsApp"
+                >
+                    <i className="bi bi-whatsapp"></i>
+                </a>
             </footer>
         </>
     );
