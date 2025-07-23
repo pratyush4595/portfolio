@@ -1,0 +1,21 @@
+.thankyou-section {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
