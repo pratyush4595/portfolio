@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devpratyush.netlify.app/sitemap.xml
