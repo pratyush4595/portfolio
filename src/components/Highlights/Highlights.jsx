@@ -25,7 +25,7 @@ const highlightsData = [
     {
         icon: 'bi-github',
         title: 'GitHub',
-        value: '50+ Commits',
+        value: '100+ Commits',
     },
     {
         icon: 'bi-clock-history',
