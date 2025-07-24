@@ -106,11 +106,11 @@ const About = () => {
                     <div className="mb-5" data-aos="fade-up">
                         <h4 className="fw-bold">🧠 Soft Skills</h4>
                         <ul className="list-inline mt-3">
-                            <li className="list-inline-item badge bg-secondary-subtle text-secondary">Problem Solving</li>
-                            <li className="list-inline-item badge bg-secondary-subtle text-secondary">Communication</li>
-                            <li className="list-inline-item badge bg-secondary-subtle text-secondary">Team Collaboration</li>
-                            <li className="list-inline-item badge bg-secondary-subtle text-secondary">Adaptability</li>
-                            <li className="list-inline-item badge bg-secondary-subtle text-secondary">Learning Mindset</li>
+                            <li className="list-inline-item badge bg-secondary-subtle text-secondary mb-1">Problem Solving</li>
+                            <li className="list-inline-item badge bg-secondary-subtle text-secondary mb-1">Communication</li>
+                            <li className="list-inline-item badge bg-secondary-subtle text-secondary mb-1">Team Collaboration</li>
+                            <li className="list-inline-item badge bg-secondary-subtle text-secondary mb-1">Adaptability</li>
+                            <li className="list-inline-item badge bg-secondary-subtle text-secondary mb-1">Learning Mindset</li>
                         </ul>
                     </div>
 
