@@ -27,7 +27,8 @@ const Hero = () => {
                         <div className="d-flex flex-column flex-lg-row mt-2 mb-3" data-aos="fade-up" data-aos-delay="400">
                             <a
                                 href={Resume}
-                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn btn-primary mt-2 me-2"
                             >
                                 📄 View Resume
