@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const ThankYou = () => {
+
+    useEffect(() => {
+        document.title = 'Thank You';
+    })
+
     return (
         <>
-            <Helmet>
-                <title>Thank You | Pratyush Swain | MERN Fullstack Developer</title>
-            </Helmet>
-
             <section className="thankyou-section py-5 text-center">
                 <div className="container">
                     <div data-aos="zoom-in">

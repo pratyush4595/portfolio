@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
 
 import './Error.css';
+import { useEffect } from 'react';
 
 const Error = () => {
 
+    useEffect(() => {
+        document.title = '404 Not Found';
+    })
+
     return (
         <>
-            <Helmet>
-                <title>404 Not Found | Pratyush Swain | MERN Fullstack Developer</title>
-            </Helmet>
-
             <section className="notfound-wrapper d-flex align-items-center justify-content-center text-center">
                 <div className="container" data-aos="zoom-in">
                     <div className="error-code">404</div>
