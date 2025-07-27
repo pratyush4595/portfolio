@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import './ThankYou.css';
+
 const ThankYou = () => {
 
     useEffect(() => {
@@ -9,7 +11,7 @@ const ThankYou = () => {
 
     return (
         <>
-            <section className="thankyou-section py-5 text-center">
+            <section className="thankyou-section text-center">
                 <div className="container">
                     <div data-aos="zoom-in">
                         <h2 className="fw-bold mb-3">🎉 Thank You!</h2>
