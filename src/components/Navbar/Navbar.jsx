@@ -25,6 +25,11 @@ const Navbar = () => {
     setIsMenuOpen(prev => !prev);
   };
 
+  // Close mobile menu on navitem click
+  const handleNavItemClick = () => {
+    if (isMenuOpen) setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm sticky-top">
       <div className="container">
@@ -57,22 +62,22 @@ const Navbar = () => {
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <div className={`collapse navbar-collapse justify-content-end ${isMenuOpen ? 'show' : ''}`} id="mainNavbar">
           <ul className="navbar-nav nav-tabs mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink to='/' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Home</NavLink>
+              <NavLink to='/' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink} onClick={handleNavItemClick}>Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to='/about' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>About</NavLink>
+              <NavLink to='/about' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink} onClick={handleNavItemClick}>About</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to='/skills' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Skills</NavLink>
+              <NavLink to='/skills' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink} onClick={handleNavItemClick}>Skills</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to='/projects' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Projects</NavLink>
+              <NavLink to='/projects' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink} onClick={handleNavItemClick}>Projects</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to='/contact' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink}>Contact</NavLink>
+              <NavLink to='/contact' className={({ isActive }) => isActive ? activeNavlink : inactiveNavlink} onClick={handleNavItemClick}>Contact</NavLink>
             </li>
           </ul>
 
