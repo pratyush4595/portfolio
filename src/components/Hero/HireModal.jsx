@@ -9,6 +9,7 @@ const HireModal = ({ show, onClose }) => {
         user_org: '',
         meeting_date: '',
         meeting_time: '',
+        meeting_duration: '30',
         user_message: ''
     });
 
@@ -16,13 +17,45 @@ const HireModal = ({ show, onClose }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    // Convert date & time to Google Calendar format
+    const formatToGoogleCalendarDateTime = (date, time, durationInMin = 30) => {
+        const start = new Date(`${date}T${time}`);
+        const end = new Date(start.getTime() + durationInMin * 60000);
+
+        const format = (d) => {
+            return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+        };
+
+        return {
+            startTime: format(start),
+            endTime: format(end),
+        };
+    };
+
+    const generateCalendarLink = () => {
+        const { meeting_date, meeting_time, meeting_duration, user_message } = formData;
+        const { startTime, endTime } = formatToGoogleCalendarDateTime(meeting_date, meeting_time, meeting_duration);
+
+        const params = new URLSearchParams({
+            action: 'TEMPLATE',
+            text: `Hiring Meeting with Pratyush Swain`,
+            dates: `${startTime}/${endTime}`,
+            details: user_message || 'Let’s connect and discuss.',
+            location: 'https://meet.google.com/esi-simm-bas',
+        });
+
+        return `https://www.google.com/calendar/render?${params.toString()}`;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const calendarLink = generateCalendarLink();
 
         const templateParams = {
             ...formData,
             owner_email: 'pswain.work@gmail.com',
-            meet_link: 'https://meet.google.com/esi-simm-bas'
+            meet_link: 'https://meet.google.com/esi-simm-bas',
+            calendar_link: calendarLink
         };
 
         emailjs.send(
@@ -34,10 +67,11 @@ const HireModal = ({ show, onClose }) => {
             .then(() => {
                 alert('📩 Meeting invite sent via email!');
                 onClose();
+                setFormData({ user_name: '', user_email: '', meeting_date: '', meeting_time: '', meeting_duration: '30', user_message: '' });
             })
             .catch((error) => {
+                console.error('EmailJS Error:', error);
                 alert('❌ Failed to send meeting invite.');
-                console.error(error);
             });
     };
 
