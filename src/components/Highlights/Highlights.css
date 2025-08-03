@@ -4,13 +4,16 @@
     transition: background-color 0.3s;
 }
 
+.highlight-scroll-container {
+    position: relative;
+}
+
 .scroll-wrapper {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     scroll-behavior: smooth;
 }
 
@@ -43,4 +46,31 @@
     .highlight-card {
         width: calc(100% / 2 - 1rem);
     }
+}
+
+.highlight-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bs-body-bg);
+    border: none;
+    font-size: 2rem;
+    color: var(--bs-primary);
+    padding: 0 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.highlight-arrow:hover {
+    opacity: 1;
+}
+
+.highlight-arrow.prev {
+    left: -10px;
+}
+
+.highlight-arrow.next {
+    right: -10px;
 }
