@@ -1,9 +1,0 @@
-.cta-buttons .btn {
-    min-width: 200px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-buttons .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.1);
-}
